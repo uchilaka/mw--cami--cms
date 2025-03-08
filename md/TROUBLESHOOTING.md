@@ -47,7 +47,7 @@ export NGINX_SERVERS_PATH="${NGINX_PATH}/servers"
 # Ensure the location is created (if it doesn't exist)
 mkdir -vp $NGINX_SERVERS_PATH
 
-# Next, from the project root directory, symlink the compliance host configurations
+# Next, from the project root directory, symlink the host configurations
 ln -s $(pwd)/.nginx/development.conf "${NGINX_SERVERS_PATH}/larcity-crm.conf"
 
 # Restart your nginx service
