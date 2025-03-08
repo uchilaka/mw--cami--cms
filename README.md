@@ -10,6 +10,12 @@ Monorepo with:
 
 Ensure your GitHub GPG credentials have been added to the project. Review [this guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) to add check for/setup a GPG key for your GitHub account.
 
+As a user with project access, run the following code to grant access to another GitHub account:
+
+```shell
+git-crypt add-gpg-user <github-email-address>
+```
+
 ### Locking encrypted files
 
 To unlock encrypted files:
