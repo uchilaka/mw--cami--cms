@@ -63,6 +63,11 @@
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "accounts"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "displayName",
+      "required": true
     }
   }
 }

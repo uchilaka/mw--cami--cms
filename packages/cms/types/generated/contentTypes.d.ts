@@ -402,6 +402,7 @@ export interface ApiAccountAccount extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     readme: Schema.Attribute.RichText;
     remoteCRMID: Schema.Attribute.String & Schema.Attribute.Private;
+    slug: Schema.Attribute.UID<'displayName'> & Schema.Attribute.Required;
     state: Schema.Attribute.Enumeration<
       [
         'DEMO',
