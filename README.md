@@ -56,9 +56,13 @@ Review the notes on [troubleshooting your local environment](./md/TROUBLESHOOTIN
 
 ## Resources
 
+- [Food Advisor demo app](https://github.com/strapi/foodadvisor)
 - [Tutorials](https://strapi.io/blog/categories/tutorials)
 - [Strapi client guide](https://docs.strapi.io/dev-docs/api/client)
 - [Customization guide](https://docs.strapi.io/dev-docs/customization)
 - [Templates](https://github.com/strapi/strapi/tree/develop/templates)
 - [What are document service middleware?](https://strapi.io/blog/what-are-document-service-middleware-and-what-happened-to-lifecycle-hooks-1)
 - [Using built-in plugins](https://docs.strapi.io/dev-docs/plugins/using-plugins)
+- [Discord](https://discord.com/invite/strapi)
+- [Forum](https://forum.strapi.io/)
+- [Awesome Strapi](https://github.com/strapi-community/awesome-strapi)
