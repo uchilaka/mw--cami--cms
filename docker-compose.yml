@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: db.cami.larcity.local
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cami_cms_development
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - larcity_cms_data:/var/lib/postgresql/data
+      - .docker/postgres/downloads:/usr/local/downloads
+    ports:
+      - 16032:5432
+    profiles:
+      - batteries-included
+      - essential
+
+volumes:
+  larcity_cms_data:
+
+networks:
+  default:
+    name: larcity-net
+    driver: bridge

@@ -1,0 +1,16 @@
+{
+  "autorun": true,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "Develop (CMS)",
+      "cwd": "./packages/cms/",
+      "commands": [
+        "yarn install",
+        "yarn develop"
+      ],
+      "execute": true,
+      "open": true
+    }
+  ]
+}

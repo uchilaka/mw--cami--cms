@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+if [ -z "${NGINX_PATH}" ]; then
+  echo "You MUST set NGINX_PATH for your enviornment. See the <repo-root>/.envrc file (or create one to set it)"
+  exit 1
+fi
+
+# $0 is the path of the current running script 
+# :a forces it to absolute
+# :h keeps the head (the folder)
+SCRIPT_PATH="${0:a:h}"
+PROJECT_ROOT="$(dirname $SCRIPT_PATH)"
+NGINX_SERVERS_PATH="${NGINX_PATH}/servers"
+
+echo "Project root: ${PROJECT_ROOT}"
+
+# Ensure that the configuration directory exists
+mkdir -vp $NGINX_SERVERS_PATH
+
+NGINX_CONFIG_FILE="${NGINX_SERVERS_PATH}/larcity-crm.conf"
+
+if [ -f "${NGINX_CONFIG_FILE}" ]; then
+  echo "Removing config file: ${NGINX_CONFIG_FILE}"
+  rm -v $NGINX_CONFIG_FILE
+fi
+
+# Symlink the config file
+echo "Symlinking config file: ${NGINX_CONFIG_FILE}"
+
+ln -vs ${PROJECT_ROOT}/.nginx/development.conf $NGINX_CONFIG_FILE
+
+# Restart your nginx service
+brew services restart nginx
+
+# Check the status of your nginx service to make sure the configurations loaded correctly
+brew services info nginx

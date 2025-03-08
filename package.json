@@ -1,4 +1,11 @@
 {
-  "name": "mw+cami+crm",
-  "packageManager": "yarn@4.7.0"
+  "name": "@uchilaka/mw--cami--cms",
+  "packageManager": "yarn@4.7.0",
+  "scripts": {
+    "cms:setup": "yarn workspaces focus @uchilaka/cami-cms",
+    "cms:develop": "yarn workspace @uchilaka/cami-cms develop"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

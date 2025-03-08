@@ -1,0 +1,33 @@
+{
+  "folders": [
+    {
+      "name": "Repo",
+      "path": "."
+    },
+    {
+      "name": "CMS",
+      "path": "packages/cms/"
+    }
+  ],
+  "settings": {
+    "window.zoomLevel": 1,
+    "terminal.integrated.fontSize": 16,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+      }
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+      }
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "fabiospampinato.vscode-terminals"
+    ]
+  }
+}
