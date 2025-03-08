@@ -3475,7 +3475,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@strapi/plugin-graphql@npm:^5.0.0":
+"@strapi/plugin-graphql@npm:^5.11.0":
   version: 5.11.0
   resolution: "@strapi/plugin-graphql@npm:5.11.0"
   dependencies:
@@ -4567,7 +4567,7 @@ __metadata:
   resolution: "@uchilaka/cami-cms@workspace:packages/cms"
   dependencies:
     "@strapi/plugin-cloud": "npm:5.11.0"
-    "@strapi/plugin-graphql": "npm:^5.0.0"
+    "@strapi/plugin-graphql": "npm:^5.11.0"
     "@strapi/plugin-users-permissions": "npm:5.11.0"
     "@strapi/strapi": "npm:5.11.0"
     lodash: "npm:^4.17.19"

@@ -49,3 +49,8 @@ bin/setup-server-config
 ## Troubleshooting issues
 
 Review the notes on [troubleshooting your local environment](./md/TROUBLESHOOTING.md)
+
+## Resources
+
+- [Strapi tutorials](https://strapi.io/blog/categories/tutorials)
+- [Strapi templates](https://github.com/strapi/strapi/tree/develop/templates)
