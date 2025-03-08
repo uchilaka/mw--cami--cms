@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "singularName": "account",
+    "pluralName": "accounts",
+    "displayName": "Account",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "displayName": {
+      "type": "string",
+      "required": true
+    },
+    "confirmedAt": {
+      "type": "datetime",
+      "private": true
+    },
+    "readme": {
+      "type": "richtext"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "DEMO",
+        "GUEST",
+        "ACTIVE",
+        "PAID",
+        "PAYMENT_DUE",
+        "OVERDUE",
+        "SUSPENDED",
+        "DEACTIVATED"
+      ],
+      "default": "GUEST",
+      "required": true
+    },
+    "systemType": {
+      "type": "enumeration",
+      "enum": [
+        "BUSINESS",
+        "INDIVIDUAL",
+        "VENDOR"
+      ]
+    },
+    "remoteCRMID": {
+      "type": "string",
+      "private": true
+    },
+    "taxID": {
+      "type": "string",
+      "unique": true
+    }
+  }
+}

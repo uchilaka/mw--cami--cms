@@ -6,33 +6,27 @@ Monorepo with:
 - Customer Account Management & Invoicing (CAMI)
 - Content Management System (CMS)
 
-## Setting up git-crypt
+## Running the app for the first time
 
-Ensure your GitHub GPG credentials have been added to the project. Review [this guide](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) to add check for/setup a GPG key for your GitHub account.
-
-As a user with project access, run the following code to grant access to another GitHub account:
+### 1. Install dependencies
 
 ```shell
-git-crypt add-gpg-user <github-email-address>
+# Install system dependencies
+brew bundle 
+
+# Install NPM dependencies
+yarn cms:setup
 ```
 
-### Locking encrypted files
+### 2. Set up git-crypt
 
-To unlock encrypted files:
+Ensure a GPG key linked to your account has been added by a user with access to the project. Review the [using git-crypt guide](./md/GIT-CRYPT.md) for details on getting setup. **You will need to complete this step to setup your `packages/cms/.env` file with secrets needed to run the CMS services**.
 
-```shell
-yarn unlock
-```
+You can also try setting the git-crypt key to `<repo-root>/.git/git-crypt/keys/default`.
 
-### Checking encryption status
+## 3. Set up hostname(s)
 
-```shell
-git-crypt status
-```
-
-## Setting up hostname(s)
-
-### 1. Update `/etc/hosts`
+### Update `/etc/hosts`
 
 First, add this line to your `/etc/hosts` file (e.g. with `sudo nano /etc/hosts`):
 
@@ -40,12 +34,27 @@ First, add this line to your `/etc/hosts` file (e.g. with `sudo nano /etc/hosts`
 127.0.0.1  cms.larcity.local
 ```
 
-### 2. Run the script to symlink the NGINX server configuration
+### Run the script to symlink the NGINX server configuration
 
 ```shell
 bin/setup-server-config
 ```
 
+### 4. Start the CMS
+
+```shell
+yarn cms:develop
+```
+
+## Using the GraphQL Explorer
+
+Ensure you have completed the steps to setup your hostname, then visit: <http://cms.larcity.local/graphql>
+
 ## Troubleshooting issues
 
 Review the notes on [troubleshooting your local environment](./md/TROUBLESHOOTING.md)
+
+## Resources
+
+- [Strapi tutorials](https://strapi.io/blog/categories/tutorials)
+- [Strapi templates](https://github.com/strapi/strapi/tree/develop/templates)
