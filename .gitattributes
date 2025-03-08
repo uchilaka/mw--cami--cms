@@ -5,5 +5,5 @@
 
 .gitattributes !filter !diff
 
-/packages/cms/.env.development filter=git-crypt diff=git-crypt
+/packages/cms/.env.(development|test) filter=git-crypt diff=git-crypt
 #*.key filter=git-crypt diff=git-crypt
