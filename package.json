@@ -3,7 +3,9 @@
   "packageManager": "yarn@4.7.0",
   "scripts": {
     "cms:setup": "yarn workspaces focus @uchilaka/cami-cms",
-    "cms:develop": "yarn workspace @uchilaka/cami-cms develop"
+    "cms:develop": "yarn workspace @uchilaka/cami-cms develop",
+    "unlock": "git-crypt unlock config/credentials/development.key",
+    "lock": "git-crypt lock"
   },
   "workspaces": [
     "packages/*"
