@@ -395,6 +395,10 @@ export interface ApiAccountAccount extends Struct.CollectionTypeSchema {
       'api::account.account'
     > &
       Schema.Attribute.Private;
+    members: Schema.Attribute.Relation<
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     readme: Schema.Attribute.RichText;
     remoteCRMID: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1047,6 +1051,7 @@ export interface PluginUsersPermissionsUser
     timestamps: true;
   };
   attributes: {
+    accounts: Schema.Attribute.Relation<'manyToMany', 'api::account.account'>;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;

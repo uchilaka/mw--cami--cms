@@ -57,6 +57,12 @@
     "taxID": {
       "type": "string",
       "unique": true
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "accounts"
     }
   }
 }
